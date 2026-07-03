@@ -6,7 +6,10 @@ sudo chmod -R 755 $LOGS_FOLDER
 LOGS_FILE="$LOGS_FOLDER/$0.log"
 USERID=$(id -u)
 R="\e[31m"
-TIMESTAMP=$(date "+%y-%m-%d")
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
+TIMESTAMP=$(date "+%Y-%m-%d %H:%M:%S")
 if [$USERID -ne 0]; then
 echo -e "$TIMESTAMP[erroe] $R please run the script" | tee -a $LOGS_FILE
 exit 1
