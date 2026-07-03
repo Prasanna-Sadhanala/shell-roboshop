@@ -11,7 +11,7 @@ do
                 --image-id ami-0220d79f3f480ecf5 \
                 --instance-type t3.micro \
                 --security-groups "rs-common" "rs-$instance"\
-                --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=rs-$INSTANCE_ID}]" \
+                --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=rs-$instance}]" \
                 --query 'Instances[0].InstanceId' \
                 --output text
     )
