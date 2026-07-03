@@ -1,3 +1,5 @@
+#!/bin/bash
+
 AMI_ID="ami-0220d79f3f480ecf5"
 ZONE_ID="Z05628711X9KW57IN2JM7" # replace with your zone ID
 DOMAIN_NAME="snlp.shop" # replace with your domain name
@@ -6,12 +8,12 @@ for instance in $@
 do
     echo "Launching instance: $instance"
     INSTANCE_ID=$(aws ec2 run-instances \
-        --image-id $AMI_ID \
-        --instance-type t3.micro \
-        --security-groups "rs-common" "roboshop-$instance" \
-        --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=roboshop-$instance}]" \
-        --query 'Instances[0].InstanceId' \
-        --output text
+                --image-id ami-0220d79f3f480ecf5 \
+                --instance-type t3.micro \
+                --security-groups rs-common  \
+                --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=Test}]' \
+                --query 'Instances[0].InstanceId' \
+                --output text
     )
     echo "Instance ID: $INSTANCE_ID"
 
