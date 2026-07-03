@@ -8,10 +8,10 @@ USERID=$(id -u)
 R="\e[31m"
 TIMESTAMP=$(date "+%y-%m-%d")
 if [$USERID -ne 0]; then
-echo -e "$TIMESTAMP[erroe] $R please run the script" | tee -a $Lo
+echo -e "$TIMESTAMP[erroe] $R please run the script" | tee -a $LOGS_FILE
 exit 1
 fi 
-validate()
+VALIDATE()
 {
     if [ $1 -ne 0 ]; then
         echo -e "$TIMESTAMP [ERROR] $2 ... $R FAILURE $N" | tee -a $LOGS_FILE
