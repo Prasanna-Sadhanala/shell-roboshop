@@ -10,8 +10,8 @@ do
     INSTANCE_ID=$(aws ec2 run-instances \
                 --image-id ami-0220d79f3f480ecf5 \
                 --instance-type t3.micro \
-                --security-groups rs-common  \
-                --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=Test}]' \
+                --security-groups "rs-common" "rs-$instance"\
+                --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=rs-$INSTANCE_ID}]" \
                 --query 'Instances[0].InstanceId' \
                 --output text
     )
