@@ -11,8 +11,8 @@ Y="\e[33m"
 N="\e[0m"
 TIMESTAMP=$(date "+%Y-%m-%d %H:%M:%S")
 if [$USERID -ne 0]; then
-echo -e "$TIMESTAMP[erroe] $R please run the script" | tee -a $LOGS_FILE
-exit 1
+    echo -e "$TIMESTAMP[ERROR] $R please run the script $N" | tee -a $LOGS_FILE
+    exit 1
 fi 
 VALIDATE()
 {
