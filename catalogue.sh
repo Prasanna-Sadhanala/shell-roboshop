@@ -61,7 +61,7 @@ VALIDATE $? "Installing dependencies"
 cp $SCRIPT_DIR/catalogue.service /etc/systemd/system/catalogue.service
 VALIDATE $? "Created systemctl service"
 
-cp $SCRIPT_DIR/mongo.repo /etc/yum.repos.d/mongo.repo
+cp $SCRIPT_DIR/mongodb.repo /etc/yum.repos.d/mongodb.repo
 VALIDATE $? "Added Mongo repo" 
 
 dnf install mongodb-mongosh -y &>>$LOGS_FILE
