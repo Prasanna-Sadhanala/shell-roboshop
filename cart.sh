@@ -26,7 +26,9 @@ VALIDATE(){
     else
         echo -e "$TIMESTAMP [INFO] $2 ... $G SUCCESS $N" | tee -a $LOGS_FILE
     fi
-}dnf module disable nodejs -y &>>$LOGS_FILE
+}
+
+dnf module disable nodejs -y &>>$LOGS_FILE
 dnf module enable nodejs:20 -y  &>>$LOGS_FILE
 dnf install nodejs -y &>>$LOGS_FILE
 VALIDATE $? "Installing NodeJS:20"
