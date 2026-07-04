@@ -25,7 +25,7 @@ VALIDATE()
         echo -e "$TIMESTAMP [INFO] $2 ... $G SUCCESS $N" | tee -a $LOGS_FILE
     fi
 }
-cp rabbitmq.repo /etc/yum.repos.d/rabbitmq.repo
+cp rabbitMQ.repo /etc/yum.repos.d/rabbitMQ.repo
 VALIDATE $? "Adding rabbitmq repo"
 
 dnf install rabbitmq-server -y &>> $LOGS_FILE
